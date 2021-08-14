@@ -50,7 +50,7 @@
     <div class="br-sideleft overflow-y-auto">
       <label class="sidebar-label pd-x-15 mg-t-20">Navigation</label>
       <div class="br-sideleft-menu">
-        <a href="index.html" class="br-menu-link active">
+        <a href="{{ route('home') }}" class="br-menu-link @yield('dashboard')">
           <div class="br-menu-item">
             <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
             <span class="menu-item-label">Dashboard</span>
@@ -68,6 +68,12 @@
             <span class="menu-item-label">Cards &amp; Widgets</span>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
+        <a href="{{ route('RoleList') }}" class="br-menu-link @yield('user_permission')">
+            <div class="br-menu-item">
+              <i class="menu-item-icon icon ion-person-stalker tx-20"></i>
+              <span class="menu-item-label">Users</span>
+            </div><!-- menu-item -->
+          </a><!-- br-menu-link -->
         <a href="#" class="br-menu-link">
           <div class="br-menu-item">
             <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
@@ -847,6 +853,7 @@
     <script src="{{ asset('admin/js/bracket.js') }}"></script>
     <script src="{{ asset('admin/js/ResizeSensor.js') }}"></script>
     <script src="{{ asset('admin/js/dashboard.js') }}"></script>
+    @yield('footer_js')
     <script>
       $(function(){
         'use strict'
