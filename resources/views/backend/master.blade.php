@@ -71,28 +71,34 @@
         <a href="{{ route('RoleList') }}" class="br-menu-link @yield('user_permission')">
             <div class="br-menu-item">
               <i class="menu-item-icon icon ion-person-stalker tx-20"></i>
-              <span class="menu-item-label">Users</span>
+              <span class="menu-item-label">User Permission</span>
             </div><!-- menu-item -->
           </a><!-- br-menu-link -->
+          <a href="#" class="br-menu-link @yield('category')">
+            <div class="br-menu-item">
+              <i class="menu-item-icon icon ion-pin tx-24"></i>
+              <span class="menu-item-label">All Posts</span>
+              <i class="menu-item-arrow fa fa-angle-down"></i>
+            </div><!-- menu-item -->
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub nav flex-column">
+            <li class="nav-item"><a href="{{ route('Category') }}" class="nav-link @yield('subcat')">Categories</a></li>
+            <li class="nav-item"><a href="{{ route('Colors') }}" class="nav-link">Colors</a></li>
+            <li class="nav-item"><a href="{{ route('Sizes') }}" class="nav-link">Sizes</a></li>
+            <li class="nav-item"><a href="{{ route('Brands') }}" class="nav-link">Brands</a></li>
+          </ul>
         <a href="#" class="br-menu-link">
           <div class="br-menu-item">
             <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
-            <span class="menu-item-label">UI Elements</span>
+            <span class="menu-item-label">Products</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
         <ul class="br-menu-sub nav flex-column">
-          <li class="nav-item"><a href="accordion.html" class="nav-link">Accordion</a></li>
-          <li class="nav-item"><a href="alerts.html" class="nav-link">Alerts</a></li>
+          <li class="nav-item"><a href="accordion.html" class="nav-link">All Products</a></li>
+          <li class="nav-item"><a href="alerts.html" class="nav-link">Add Products</a></li>
           <li class="nav-item"><a href="buttons.html" class="nav-link">Buttons</a></li>
           <li class="nav-item"><a href="cards.html" class="nav-link">Cards</a></li>
-          <li class="nav-item"><a href="icons.html" class="nav-link">Icons</a></li>
-          <li class="nav-item"><a href="modal.html" class="nav-link">Modal</a></li>
-          <li class="nav-item"><a href="pagination.html" class="nav-link">Pagination</a></li>
-          <li class="nav-item"><a href="popups.html" class="nav-link">Tooltip &amp; Popover</a></li>
-          <li class="nav-item"><a href="progress.html" class="nav-link">Progress</a></li>
-          <li class="nav-item"><a href="spinners.html" class="nav-link">Spinners</a></li>
-          <li class="nav-item"><a href="typography.html" class="nav-link">Typography</a></li>
         </ul>
         <a href="#" class="br-menu-link">
           <div class="br-menu-item">
@@ -837,6 +843,7 @@
     <!-- ########## END: MAIN PANEL ########## -->
 
     <script src="{{ asset('admin/lib/jquery/jquery.js') }}"></script>
+    <script src="//code.jquery.com/jquery-3.3.0.min.js"></script>
     <script src="{{ asset('admin/lib/popper.js/popper.js') }}"></script>
     <script src="{{ asset('admin/lib/bootstrap/bootstrap.js') }}"></script>
     <script src="{{ asset('admin/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js') }}"></script>
@@ -853,6 +860,7 @@
     <script src="{{ asset('admin/js/bracket.js') }}"></script>
     <script src="{{ asset('admin/js/ResizeSensor.js') }}"></script>
     <script src="{{ asset('admin/js/dashboard.js') }}"></script>
+    @yield('tabs_js')
     @yield('footer_js')
     <script>
       $(function(){
