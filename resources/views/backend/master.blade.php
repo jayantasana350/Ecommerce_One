@@ -95,8 +95,8 @@
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
         <ul class="br-menu-sub nav flex-column">
-          <li class="nav-item"><a href="accordion.html" class="nav-link">All Products</a></li>
-          <li class="nav-item"><a href="alerts.html" class="nav-link">Add Products</a></li>
+          <li class="nav-item"><a href="{{ route('ProducstLists') }}" class="nav-link">All Products</a></li>
+          <li class="nav-item"><a href="{{ route('AddProducts') }}" class="nav-link">Add Products</a></li>
           <li class="nav-item"><a href="buttons.html" class="nav-link">Buttons</a></li>
           <li class="nav-item"><a href="cards.html" class="nav-link">Cards</a></li>
         </ul>
@@ -860,6 +860,7 @@
     <script src="{{ asset('admin/js/bracket.js') }}"></script>
     <script src="{{ asset('admin/js/ResizeSensor.js') }}"></script>
     <script src="{{ asset('admin/js/dashboard.js') }}"></script>
+    @yield('variation')
     @yield('tabs_js')
     @yield('footer_js')
     <script>

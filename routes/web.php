@@ -71,3 +71,7 @@ Route::post('/brand-update', 'BrandController@BrandUpdate')->name('BrandUpdate')
 Route::get('/brand-delete/{id}', 'BrandController@BrandDelete')->name('BrandDelete');
 Route::get('/brand-restore/{id}', 'BrandController@BrandRestore')->name('BrandRestore');
 Route::get('/brand-parmanent-delete/{id}', 'BrandController@BrandPermanentDelete')->name('BrandPermanentDelete');
+
+// Brand Route
+Route::get('/products-lists', 'ProductController@ProducstLists')->name('ProducstLists');
+Route::get('/add-products', 'ProductController@AddProducts')->name('AddProducts');
