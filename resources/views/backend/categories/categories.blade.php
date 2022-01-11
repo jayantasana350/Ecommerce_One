@@ -21,6 +21,11 @@ active
                         <div class="tab-pane active" id="category">
                           {{--========================= Categoy Add Modal Start Here =========================--}}
                           <a href="" style="display:inline; float: right; " class="btn btn-outline-info mb-1 mr-1" data-toggle="modal" data-target="#AddCategory">Add New Category</a>
+                            <form action="{{ route('ExcelImport') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="file" name="excel">
+                                <input type="submit" value="Excel Upload" class="btn btn-outline-info">
+                            </form>
                           <div class="modal fade" id="AddCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                               <div class="modal-content p-3" style="width: 400px">
@@ -316,7 +321,8 @@ active
                                 <tr>
                                     <td class="wd-10p text-center">{{ $loop->index + 1 }}</td>
                                     <td class="wd-35p text-center">{{ $subcat_trush->subcategory_name }}</td>
-                                    <td class="wd-35p text-center">{{ $subcat_trush->category->category_name }}</td>
+                                    <td class="wd-35p text-center">{{ $subcat_trush->category_name }}</td>
+                                    {{-- <td class="wd-35p text-center">{{ $subcat_trush->category->category_name }}</td> --}}
                                     <td class="wd-35p text-center">{{ $subcat_trush->description }}</td>
                                     <td class="wd-20p text-center">{{ $subcat_trush->slug }}</td>
                                     <td class="wd-20p text-center d-flex">

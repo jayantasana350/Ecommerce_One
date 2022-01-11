@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', 'FrontEndController@Front')->name('Front');
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -75,3 +75,46 @@ Route::get('/brand-parmanent-delete/{id}', 'BrandController@BrandPermanentDelete
 // Brand Route
 Route::get('/products-lists', 'ProductController@ProducstLists')->name('ProducstLists');
 Route::get('/add-products', 'ProductController@AddProducts')->name('AddProducts');
+Route::post('/product-store', 'ProductController@ProductStore')->name('ProductStore');
+Route::get('/product-edit/{id}', 'ProductController@ProductEdit')->name('ProductEdit');
+Route::post('/product-update', 'ProductController@ProductUpdate')->name('ProductUpdate');
+Route::get('/product-gallery-edit/{id}', 'ProductController@ProductGalleryEdit')->name('ProductGalleryEdit');
+Route::get('/product-gallery-delete/{id}', 'ProductController@ProductGalleryDelete')->name('ProductGalleryDelete');
+Route::post('/product-gallery-update', 'ProductController@ProductGalleryUpdate')->name('ProductGalleryUpdate');
+Route::get('/product-restore/{id}', 'ProductController@ProductRestore')->name('ProductRestore');
+Route::get('/product-delete/{id}', 'ProductController@ProductDelete')->name('ProductDelete');
+Route::get('/product-permanernt-delete/{id}', 'ProductController@ProductPermanentDelete')->name('ProductPermanentDelete');
+
+// Frontend Route
+Route::get('/shop-quick-view/{id}', 'FrontEndController@ShopQuicView')->name('ShopQuicView');
+Route::get('/single-product/{slug}', 'FrontEndController@SingleProduct')->name('SingleProduct');
+Route::get('/shop', 'FrontEndController@ShopPage')->name('ShopPage');
+
+// Ajax Route For Variaiotn
+// Route::get('/product/get/size/{color}/{product}', 'FrontEndController@GetSize')->name('GetSize');
+// Route::get('/product/get/price/{size}/{product}', 'FrontEndController@GetPrice')->name('GetPrice');
+// Route::post('/product/get/color/to/price', 'FrontEndController@GetColorToPrice')->name('GetColorToPrice');
+Route::post('/product/get/size/to/price', 'FrontEndController@GetSizeToPrice')->name('GetSizeToPrice');
+Route::post('/product/get/color/to/size', 'FrontEndController@GetColorToSize')->name('GetColorToSize');
+Route::get('/product/get/size/wise/color/{size}/{product}', 'FrontEndController@GetSizeWiseColor')->name('GetSizeWiseColor');
+Route::get('/product/get/res/color/to/price/{color}/{product}', 'FrontEndController@GetResColorToPrice')->name('GetResColorToPrice');
+Route::get('/product/get/color/wise/size/{color}/{product}', 'FrontEndController@GetColorWiseSize')->name('GetColorWiseSize');
+Route::get('/product/get/size/wise/price/{price}/{product}', 'FrontEndController@GetSizeWisePrice')->name('GetSizeWisePrice');
+
+Route::post('/add/to/cart', 'CartController@AddToCart')->name('AddToCart');
+// Route::get('/cart/page', 'CartController@CartPage')->name('CartPage');
+Route::get('/cart/page', 'CartController@CartPage')->name('CartPage');
+Route::post('/update/cart', 'CartController@UpdateCart')->name('UpdateCart');
+Route::get('/single/cart/delete/{id}', 'CartController@SingleCartDelete')->name('SingleCartDelete');
+
+Route::get('/product/checkout', 'CheckoutController@ProductCheckout')->name('ProductCheckout');
+Route::get('/api/get-state-list/{id}', 'CheckoutController@GetState')->name('GetState');
+Route::get('api/get-city-list/{id}', 'CheckoutController@GetCity')->name('GetCity');
+Route::get('/coupon', 'CartController@CouponAdd')->name('CouponAdd');
+Route::post('/payment', 'PaymentController@MakePayment')->name('MakePayment');
+
+Route::get('/order', 'HomeController@Order')->name('Order');
+Route::get('/order/export', 'HomeController@OrderExport')->name('OrderExport');
+// Route::get('/order/import', 'HomeController@import')->name('import');
+Route::post('/order/excel/import', 'HomeController@import')->name('ExcelImport');
+

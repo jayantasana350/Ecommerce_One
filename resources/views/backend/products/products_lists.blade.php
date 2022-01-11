@@ -1,9 +1,8 @@
 @extends('backend.master')
-@section('category')
+@section('product')
  show-sub active
 @endsection
-
-@section('subcat')
+@section('productlist')
 active
 @endsection
 @section('content')
@@ -25,28 +24,60 @@ active
                             <thead>
                               <tr>
                                 <th class="wd-10p text-center">SL</th>
-                                <th class="wd-35p text-center">Image</th>
+                                <th class="wd-35p text-center">Thumbnail</th>
                                 <th class="wd-35p text-center">SKU</th>
                                 <th class="wd-35p text-center">Title</th>
                                 <th class="wd-20p text-center">Price</th>
                                 <th class="wd-20p text-center">Quantity</th>
+                                <th class="wd-20p text-center">Images</th>
                                 <th class="wd-20p text-center">Action</th>
                               </tr>
                             </thead>
                             <tbody>
+                                @foreach ($products as $key => $product)
                                 <tr>
-                                    <td class="wd-10p text -center">Status</td>
-                                    <td class="wd-35p text-center">Image</td>
-                                    <td class="wd-35p text-center">SKU</td>
-                                    <td class="wd-35p text-center">Title</td>
-                                    <td class="wd-35p text-center">Price</td>
-                                    <td class="wd-20p text-center">Quantity</td>
+                                    <td class="wd-10p text -center">{{ $loop->index+1 }}</td>
+                                    <td class="wd-35p text-center"><img src="{{ asset('images/' . $product->thumbnail) }}" alt="" style="width: 50px;"></td>
+                                    <td class="wd-35p text-center">{{ $product->sku }}</td>
+                                    <td class="wd-35p text-center">{{ $product->title }}</td>
+
+                                    <td class="wd-35p text-center" >
+                                        @foreach ($attribute as $prices)
+                                        <span>
+                                            @if ($product->id == $prices->product_id)
+                                            {{ $prices->price }}
+                                            @endif
+                                        </span>
+                                        @endforeach
+                                    </td>
+                                    <td class="wd-20p text-center">
+                                        @foreach ($attribute as $quantity)
+                                        <span>
+                                            @if ($product->id == $quantity->product_id)
+                                            <span>{{ $quantity->quantity }}</span><br>
+                                            @endif
+                                        </span>
+                                        @endforeach
+                                    </td>
+                                    <td class="wd-20p text-center">
+                                        @foreach ($productgallery as $gallery)
+                                        <span>
+                                            @if ($product->id == $gallery->product_id)
+                                            <img src="{{ asset('gallery/'.$gallery->created_at->format('Y/m/'). $gallery->product_id .'/' . $gallery->image ) }}" alt="image" width="50" height="50">
+                                            @endif
+                                        </span>
+                                        @endforeach
+                                    </td>
                                     <td class="wd-20p text-center d-flex">
-                                        <a href="" class="btn btn-info mr-1">Edit</a>
-                                        <a href="" class="btn btn-danger">Delete</a>
+                                        <a href="{{ route('ProductEdit', $product->id) }}" class="btn btn-info mr-1">Edit</a>
+                                        <a href="{{ route('ProductGalleryEdit', $product->id) }}" class="btn btn-info mr-1">Gallery</a>
+                                        <a href="{{ route('ProductDelete', $product->id) }}" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
+                                @endforeach
+
                             </tbody>
+                            {{ $products->links() }}
                           </table>
                           {{--========================= Categoy List Ends Here =========================--}}
                         </div>
@@ -66,18 +97,36 @@ active
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($product_trushed  as $key => $product_trush)
                                 <tr>
-                                    <td class="wd-10p text -center">Status</td>
-                                    <td class="wd-35p text-center">Image</td>
-                                    <td class="wd-35p text-center">SKU</td>
-                                    <td class="wd-35p text-center">Title</td>
-                                    <td class="wd-35p text-center">Price</td>
-                                    <td class="wd-20p text-center">Quantity</td>
+                                    <td class="wd-10p text -center">{{ $loop->index+1 }}</td>
+                                    <td class="wd-35p text-center"><img src="{{ asset('images/' . $product_trush->thumbnail) }}" alt="" style="width: 50px;"></td>
+                                    <td class="wd-35p text-center">{{ $product_trush->sku }}</td>
+                                    <td class="wd-35p text-center">{{ $product_trush->title }}</td>
+                                    <td class="wd-35p text-center">
+                                        @foreach ($attr_trush as $prices)
+                                        <span>
+                                            @if ($product_trush->id == $prices->product_id)
+                                            {{ $prices->price }}
+                                            @endif
+                                        </span>
+                                        @endforeach
+                                    </td>
+                                    <td class="wd-20p text-center">
+                                        @foreach ($attr_trush as $quantity)
+                                        <span>
+                                            @if ($product_trush->id == $quantity->product_id)
+                                            <span>{{ $quantity->quantity }}</span><br>
+                                            @endif
+                                        </span>
+                                        @endforeach
+                                    </td>
                                     <td class="wd-20p text-center d-flex">
-                                        <a href="" class="btn btn-info mr-1">Edit</a>
-                                        <a href="" class="btn btn-danger">Delete</a>
+                                        <a href="{{ route('ProductRestore', $product_trush->id) }}" class="btn btn-info mr-1">Restore</a>
+                                        <a href="{{ route('ProductPermanentDelete', $product_trush->id) }}" class="btn btn-danger">Permanent Delete</a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                             </table>
                             {{--========================= Categoy List Ends Here =========================--}}

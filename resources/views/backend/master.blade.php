@@ -56,12 +56,6 @@
             <span class="menu-item-label">Dashboard</span>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
-        <a href="mailbox.html" class="br-menu-link">
-          <div class="br-menu-item">
-            <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
-            <span class="menu-item-label">Mailbox</span>
-          </div><!-- menu-item -->
-        </a><!-- br-menu-link -->
         <a href="card-dashboard.html" class="br-menu-link">
           <div class="br-menu-item">
             <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
@@ -87,7 +81,7 @@
             <li class="nav-item"><a href="{{ route('Sizes') }}" class="nav-link">Sizes</a></li>
             <li class="nav-item"><a href="{{ route('Brands') }}" class="nav-link">Brands</a></li>
           </ul>
-        <a href="#" class="br-menu-link">
+        <a href="#" class="br-menu-link @yield('product')">
           <div class="br-menu-item">
             <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
             <span class="menu-item-label">Products</span>
@@ -95,11 +89,17 @@
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
         <ul class="br-menu-sub nav flex-column">
-          <li class="nav-item"><a href="{{ route('ProducstLists') }}" class="nav-link">All Products</a></li>
+          <li class="nav-item"><a href="{{ route('ProducstLists') }}" class="nav-link @yield('productlist')">All Products</a></li>
           <li class="nav-item"><a href="{{ route('AddProducts') }}" class="nav-link">Add Products</a></li>
           <li class="nav-item"><a href="buttons.html" class="nav-link">Buttons</a></li>
           <li class="nav-item"><a href="cards.html" class="nav-link">Cards</a></li>
         </ul>
+        <a href="{{ route('Order') }}" class="br-menu-link @yield('orders')">
+            <div class="br-menu-item">
+              <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+              <span class="menu-item-label">Order</span>
+            </div><!-- menu-item -->
+          </a><!-- br-menu-link -->
         <a href="#" class="br-menu-link">
           <div class="br-menu-item">
             <i class="menu-item-icon ion-ios-redo-outline tx-24"></i>
@@ -863,6 +863,7 @@
     @yield('variation')
     @yield('tabs_js')
     @yield('footer_js')
+    @yield('ajax_image')
     <script>
       $(function(){
         'use strict'
