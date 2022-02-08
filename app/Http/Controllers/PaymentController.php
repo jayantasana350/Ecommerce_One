@@ -25,7 +25,7 @@ class PaymentController extends Controller
 
      $order = Order::all();
 
-    return Mail::to(Auth::user()->email)->send(new OrderShipped($order));
+    Mail::to(Auth::user()->email)->send(new OrderShipped($order));
 
         if ($request->payment == 'Card') {
             $shipping = New Checkout;

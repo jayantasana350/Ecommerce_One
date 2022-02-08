@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Exports\OrderExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\CategoryImport;
+use PDF;
 
 class HomeController extends Controller
 {
@@ -17,7 +18,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('verified');
+        $this->middleware('auth');
     }
 
     /**
@@ -48,5 +49,21 @@ class HomeController extends Controller
         return redirect('/')->with('success', 'All good!');
     }
 
+    function SelectedDateDownload(Request $request){
+
+        $from = $request->start;
+        $to = $request->end;
+
+        return Excel::download(new OrderExport($from, $to), 'Orders.xlsx');
+    }
+
+    function PDFDownload(){
+
+        $orders = Order::all();
+        $pdf = PDF::loadView('exports.pdf',[
+            'orders' => $orders
+        ]);
+        return $pdf->download('invoice.pdf');
+    }
 
 }

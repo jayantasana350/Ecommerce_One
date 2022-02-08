@@ -12,10 +12,17 @@ class OrderExport implements FromView
     /**
     * @return \Illuminate\Support\Collection
     */
+
+    public function __construct($from, $to)
+    {
+        $this->from = $from;
+        $this->to = $to;
+    }
+
     public function view(): View
     {
         return view('exports.invoices', [
-            'orders' => Order::all()
+            'orders' => Order::whereBetween('created_at', [$this->from, $this->to])->get()
         ]);
     }
 }

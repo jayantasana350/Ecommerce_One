@@ -7,17 +7,22 @@ active
     <div class="br-section-wrapper">
 
         <div class="container hidden">
-            <ul  class="nav nav-pills float-right">
-                        <li class="active"><a href="{{ route('OrderExport') }}" class="btn btn-info mr-1">Orders Export</a></li>
-                        <li>
-                            <form action="" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <input type="date" name="start">
-                                <input type="date" name="end">
-                                <input type="submit" value="Download">
-                            </form>
-                        </li>
-                    </ul><br><br>
+            <div  class="row">
+                    <div class="col-lg-3">
+                        <a href="{{ route('OrderExport') }}" class="btn btn-info mr-1">Orders Export</a>
+                    </div>
+                    <div class="col-lg-3">
+                        <a href="{{ route('PDFDownload') }}" class="btn btn-info mr-1">PDFDownload</a>
+                    </div>
+                    <div class="col-lg-6 float-left">
+                        <form action="{{ route('SelectedDateDownload') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <input style="width: 150px; float: left;" type="date" class="form-control" name="start">
+                            <input style="width: 150px; float: left;" type="date" class="form-control" name="end">
+                            <input style="float: left; cursor: pointer;" type="submit" value="Download" class="btn btn-info">
+                        </form>
+                    </div>
+                    </div><br><br>
 
                     <div class="tab-content hidden">
                         <div class="tab-pane active" id="category">

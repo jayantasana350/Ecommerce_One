@@ -100,10 +100,16 @@
               <span class="menu-item-label">Order</span>
             </div><!-- menu-item -->
           </a><!-- br-menu-link -->
-        <a href="#" class="br-menu-link">
+          <a href="{{ route('blog.index') }}" class="br-menu-link">
+            <div class="br-menu-item">
+              <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+              <span class="menu-item-label">Blogs</span>
+            </div><!-- menu-item -->
+          </a><!-- br-menu-link -->
+        <a href="" class="br-menu-link">
           <div class="br-menu-item">
             <i class="menu-item-icon ion-ios-redo-outline tx-24"></i>
-            <span class="menu-item-label">Navigation</span>
+            <span class="menu-item-label">Blogs</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->

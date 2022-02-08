@@ -43,6 +43,7 @@
 
     <!-- Theme css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 
 </head>
 
@@ -267,20 +268,20 @@
                                                                     </div>
                                                                     <div class="menu-content">
                                                                         <ul>
-                                                                            <li><a href="nursery.html">cart modal
+                                                                            <li><a href="{{ route('CartModal') }}">cart modal
                                                                                     popup</a></li>
-                                                                            <li><a href="vegetables.html">qty.
+                                                                            <li><a href="{{ route('QTYCounter') }}">qty.
                                                                                     counter
                                                                                     <i class="fa fa-bolt icon-trend"
                                                                                         aria-hidden="true"></i></a>
                                                                             </li>
-                                                                            <li><a href="bags.html">cart top</a>
+                                                                            <li><a href="{{ route('CartTop') }}">cart top</a>
                                                                             </li>
-                                                                            <li><a href="shoes.html">cart bottom</a>
+                                                                            <li><a href="{{ route('CartBottom') }}">cart bottom</a>
                                                                             </li>
-                                                                            <li><a href="watch.html">cart left</a>
+                                                                            <li><a href="{{ route('CartLeft') }}">cart left</a>
                                                                             </li>
-                                                                            <li><a href="tools.html">cart right</a>
+                                                                            <li><a href="{{ route('CartRight') }}">cart right</a>
                                                                             </li>
                                                                         </ul>
                                                                     </div>
@@ -293,19 +294,19 @@
                                                                     </div>
                                                                     <div class="menu-content">
                                                                         <ul>
-                                                                            <li><a href="index.html">Newsletter</a>
+                                                                            <li><a href="{{ route('NewsLetter') }}">Newsletter</a>
                                                                             </li>
-                                                                            <li><a href="index.html">exit<i
+                                                                            <li><a href="{{ route('Exit') }}">exit<i
                                                                                         class="ms-2 fa fa-bolt icon-trend"
                                                                                         aria-hidden="true"></i></a>
                                                                             </li>
-                                                                            <li><a href="christmas.html">christmas</a>
+                                                                            <li><a href="{{ route('Christmas') }}">christmas</a>
                                                                             </li>
-                                                                            <li><a href="furniture-3.html">black
+                                                                            <li><a href="{{ route('BlackFriday') }}">black
                                                                                     friday</a></li>
-                                                                            <li><a href="fashion-4.html">cyber
+                                                                            <li><a href="{{ route('CyberMonday') }}">cyber
                                                                                     monday</a></li>
-                                                                            <li><a href="marketplace-demo-3.html">new
+                                                                            <li><a href="{{ route('NewYear') }}">new
                                                                                     year</a></li>
                                                                         </ul>
                                                                     </div>
@@ -318,13 +319,13 @@
                                                                     </div>
                                                                     <div class="menu-content">
                                                                         <ul>
-                                                                            <li><a href="index.html">bottom<i
+                                                                            <li><a href="{{ route('CookieBottom') }}">bottom<i
                                                                                         class="ms-2 fa fa-bolt icon-trend"
                                                                                         aria-hidden="true"></i></a>
                                                                             </li>
-                                                                            <li><a href="fashion-4.html">bottom
+                                                                            <li><a href="{{ route('CookieLeft') }}">bottom
                                                                                     left</a></li>
-                                                                            <li><a href="bicycle.html">bottom
+                                                                            <li><a href="{{ route('CookieRight') }}">bottom
                                                                                     right</a></li>
                                                                         </ul>
                                                                     </div>
@@ -333,7 +334,7 @@
                                                                     </div>
                                                                     <div class="menu-content">
                                                                         <ul>
-                                                                            <li><a href="marketplace-demo-2.html">ajax
+                                                                            <li><a href="{{ route('AjaxSearch') }}">ajax
                                                                                     search<i
                                                                                         class="ms-2 fa fa-bolt icon-trend"
                                                                                         aria-hidden="true"></i></a>
@@ -350,20 +351,17 @@
                                                                     <div class="menu-content">
                                                                         <ul>
                                                                             <li><a target="_blank"
-                                                                                    href="invoice-1.html">invoice
+                                                                                    href="{{ route('InvoiceOne') }}">invoice
                                                                                     1</a></li>
                                                                             <li><a target="_blank"
-                                                                                    href="invoice-2.html">invoice
+                                                                                    href="{{ route('InvoiceTwo') }}">invoice
                                                                                     2</a></li>
                                                                             <li><a target="_blank"
-                                                                                    href="invoice-3.html">invoice
+                                                                                    href="{{ route('InvoiceThree') }}">invoice
                                                                                     3</a></li>
                                                                             <li><a target="_blank"
-                                                                                    href="invoice-4.html">invoice
+                                                                                    href="{{ route('InvoiceFour') }}">invoice
                                                                                     4</a></li>
-                                                                            <li><a target="_blank"
-                                                                                    href="invoice-5.html">invoice
-                                                                                    5</a></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
@@ -376,16 +374,13 @@
                                                                     <div class="menu-content">
                                                                         <ul>
                                                                             <li><a target="_blank"
-                                                                                    href="http://themes.pixelstrap.com/multikart/email-template/email-order-success.html">order
-                                                                                    success</a></li>
-                                                                            <li><a target="_blank"
-                                                                                    href="http://themes.pixelstrap.com/multikart/email-template/email-order-success-two.html">order
+                                                                                    href="{{ route('OrderSuccess2') }}">order
                                                                                     success 2</a></li>
                                                                             <li><a target="_blank"
-                                                                                    href="http://themes.pixelstrap.com/multikart/email-template/email-template.html">email
+                                                                                    href="{{ route('EmailTemplate') }}">email
                                                                                     template</a></li>
                                                                             <li><a target="_blank"
-                                                                                    href="http://themes.pixelstrap.com/multikart/email-template/email-template-two.html">email
+                                                                                    href="{{ route('EmailTemplate2') }}">email
                                                                                     template 2</a></li>
                                                                         </ul>
                                                                     </div>
@@ -394,7 +389,7 @@
                                                                     </div>
                                                                     <div class="menu-content">
                                                                         <ul>
-                                                                            <li><a href="elements.html">
+                                                                            <li><a href="{{ route('ElementsPage') }}">
                                                                                     elements page<i
                                                                                         class="ms-2 fa fa-bolt icon-trend"
                                                                                         aria-hidden="true"></i>
@@ -491,80 +486,63 @@
                                                 <li>
                                                     <a href="#">vendor</a>
                                                     <ul>
-                                                        <li><a href="vendor-dashboard.html">vendor dashboard</a>
+                                                        <li><a href="{{ route('VendorDashboard') }}">vendor dashboard</a>
                                                         </li>
-                                                        <li><a href="vendor-profile.html">vendor profile</a></li>
-                                                        <li><a href="become-vendor.html">become vendor</a></li>
+                                                        <li><a href="{{ route('VendorProfile') }}">vendor profile</a></li>
+                                                        <li><a href="{{ route('BecomeVendor') }}">become vendor</a></li>
                                                     </ul>
                                                 </li>
                                                 <li>
                                                     <a href="#">account</a>
                                                     <ul>
-                                                        <li><a href="wishlist.html">wishlist</a></li>
+                                                        <li><a href="{{ route('Wishlist') }}">wishlist</a></li>
                                                         <li><a href="{{ route('CartPage') }}">cart</a></li>
-                                                        <li><a href="dashboard.html">Dashboard</a></li>
+                                                        <li><a href="{{ route('FrontDashboard') }}">Dashboard</a></li>
                                                         <li><a href="{{ url('login') }}">login</a></li>
                                                         <li><a href="{{ url('register') }}">register</a></li>
-                                                        <li><a href="contact.html">contact</a></li>
-                                                        <li><a href="forget_pwd.html">forget password</a></li>
-                                                        <li><a href="profile.html">profile</a></li>
+                                                        <li><a href="{{ route('Contact') }}">contact</a></li>
+                                                        <li><a href="{{ route('ForgetPassword') }}">forget password</a></li>
+                                                        <li><a href="{{ route('Profile') }}">profile</a></li>
                                                         <li><a href="{{ route('ProductCheckout') }}">checkout</a></li>
-                                                        <li><a href="order-success.html">order success</a></li>
-                                                        <li><a href="order-tracking.html">order tracking<span
+                                                        <li><a href="{{ route('OrderSuccess') }}">order success</a></li>
+                                                        <li><a href="{{ route('OrderTracking') }}">order tracking<span
                                                                     class="new-tag">new</span></a></li>
                                                     </ul>
                                                 </li>
                                                 <li>
                                                     <a href="#">portfolio</a>
                                                     <ul>
-                                                        <li><a href="#">grid</a>
-                                                            <ul>
-                                                                <li><a href="grid-2-col.html">grid
-                                                                        2</a></li>
-                                                                <li><a href="grid-3-col.html">grid
-                                                                        3</a></li>
-                                                                <li><a href="grid-4-col.html">grid
-                                                                        4</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li><a href="#">masonry</a>
-                                                            <ul>
-                                                                <li><a href="masonary-2-grid.html">grid 2</a></li>
-                                                                <li><a href="masonary-3-grid.html">grid 3</a></li>
-                                                                <li><a href="masonary-4-grid.html">grid 4</a></li>
-                                                                <li><a href="masonary-fullwidth.html">full width</a>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
+                                                        <li><a href="{{ route('PortfolioGrid') }}">grid 3</a></li>
+                                                        <li><a href="{{ route('PortfolioMasonary') }}">grid 4</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="about-page.html">about us</a></li>
-                                                <li><a href="search.html">search</a></li>
-                                                <li><a href="review.html">review</a>
+                                                <li><a href="{{ route('AboutUs') }}">about us</a></li>
+                                                <li><a href="{{ route('Search') }}">search</a></li>
+                                                <li><a href="{{ route('Review') }}">review</a>
                                                 </li>
                                                 <li>
                                                     <a href="#">compare</a>
                                                     <ul>
-                                                        <li><a href="compare.html">compare</a></li>
-                                                        <li><a href="compare-2.html">compare-2</a></li>
+                                                        <li><a href="{{ route('Compare') }}">compare</a></li>
+                                                        <li><a href="{{ route('Compare') }}">compare-2</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="collection.html">collection</a></li>
-                                                <li><a href="lookbook.html">lookbook</a></li>
-                                                <li><a href="sitemap.html">site map</a>
+                                                <li><a href="{{ route('Collection') }}">collection</a></li>
+                                                <li><a href="{{ route('Lookbook') }}">lookbook</a></li>
+                                                <li><a href="{{ route('SiteMap') }}">site map</a>
                                                 </li>
-                                                <li><a href="404.html">404</a></li>
-                                                <li><a href="coming-soon.html">coming soon</a></li>
-                                                <li><a href="faq.html">FAQ</a></li>
+                                                <li><a href="{{ route('404Page') }}">404</a></li>
+                                                <li><a href="{{ route('CommingSoon') }}">coming soon</a></li>
+                                                <li><a href="{{ route('FAQ') }}">FAQ</a></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">blog</a>
                                             <ul>
-                                                <li><a href="blog-page.html">left sidebar</a></li>
-                                                <li><a href="blog(right-sidebar).html">right sidebar</a></li>
-                                                <li><a href="blog(no-sidebar).html">no sidebar</a></li>
-                                                <li><a href="blog-details.html">blog details</a></li>
+                                                <li><a href="{{ route('BlogLeftSidebar') }}">left sidebar</a></li>
+                                                <li><a href="{{ route('BlogRightSidebar') }}">right sidebar</a></li>
+                                                <li><a href="{{ route('BlogNoSidebar') }}">no sidebar</a></li>
+                                                <li><a href="{{ route('BlogDetails') }}">blog details</a></li>
                                             </ul>
                                         </li>
                                     </ul>
